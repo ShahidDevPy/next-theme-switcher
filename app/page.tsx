@@ -1,14 +1,46 @@
-import Image from "next/image";
+import Image from 'next/image'
+
+import { Button } from '@nextui-org/button'
+import { Card, CardBody } from '@nextui-org/card'
+import ProductSize from './component/ProductSize'
+
+import shoe from '@/public/images/shoe.webp'
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-      </div>
-    </main>
-  );
+    return (
+        <section className='py-36'>
+            <div className='container flex items-center justify-center'>
+                <Card className='py-4 lg:w-3/4 xl:w-1/2'>
+                    <CardBody className='overflow-visible py-2'>
+                        <div className='flex gap-6'>
+                            <Image alt='Shoe' className='flex-1 object-cover' src={shoe} />
+                            <div className='flex-1'>
+                                <h2 className='text-lg font-bold uppercase'>
+                                    Nike Adapt BB 2.0
+                                </h2>
+                                <p className='text-sm text-default-500'>
+                                    Consistent, customized fit, game-changing.
+                                </p>
+
+                                <div className='mb-6 mt-2 flex gap-3'>
+                                    <span className='font-bold'>$279.79</span>
+                                    <span className='text-default-600 line-through'>$350</span>
+                                    <span className='text-success'>20% off</span>
+                                </div>
+
+                                <ProductSize />
+
+                                <div className='mt-6 flex gap-6'>
+                                    <Button color='primary'>Buy now</Button>
+                                    <Button color='primary' variant='bordered' radius='full'>
+                                        Add to bag
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div>
+        </section>
+    )
 }
