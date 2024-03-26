@@ -1,11 +1,17 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
+/*
+suppose this below one css variable to work in nextUI configuration
+*/
+:root {
+    --next-baseFive: 52 2% 51%;
+}
 @layer base {
     :root {
-        --baseOne: hsl(0, 0%, 100%);
+        --baseOne: #e8c260;
         --baseTwo: hsl(252, 2%, 51%);
         --baseThree: hsl(0, 0%, 96%);
         --baseFour: hsl(0, 0%, 100%);
@@ -31,24 +37,23 @@
     }
 
     :root[data-theme="light"] {
-        --baseOne: hsl(0, 0%, 100%);
+        --baseOne: hsl(87, 66%, 67%);
         --baseTwo: hsl(252, 2%, 51%);
-        --baseThree: hsl(0, 0%, 96%);
+        --baseThree: hsl(0, 58%, 35%);
         --baseFour: hsl(0, 0%, 100%);
         --accent1: hsl(6, 100%, 80%);
     }
 
-    :root[data-theme="third"] {
-        --baseOne: #FFFFFF;
-        --baseTwo: hsl(0,0%,31%);
-        --baseThree:#BEBEBE;
-        --baseFour: hsl(0, 3%, 13%);
-        --accent1: hsl(6, 100%, 80%);
+    :root[data-theme="modern"] {
+        --baseOne: hsl(167, 74%, 72%);
+        --baseTwo: hsl(140, 49%, 60%);
+        --baseThree: hsl(270, 73%, 62%);
+        --baseFour: hsl(0, 78%, 82%);
+        --accent1: hsl(7, 91%, 18%);
     }
 
-
     html {
-        @apply bg-baseFour scroll-smooth text-baseTwo transition-colors duration-300;
+        @apply scroll-smooth transition-colors duration-300;
     }
 
     body {
